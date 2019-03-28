@@ -51,7 +51,7 @@ $app->post('/auth', function (Request $request, Response $response, array $args)
 
 $app->group('/api', function (App $app) {
     $app->get('/user', function (Request $request, Response $response, array $args) {
-        sleep(1);
+        sleep(1);  // わざと1秒待機させる
         $payload = $request->getAttribute('decoded_token_data');
         $data = ['payload' => $payload];
         return $response->withJson($data, 200)->withHeader('Content-Type', 'application/json');
