@@ -1,0 +1,30 @@
+{
+  "name": "client_side",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel app1/index.html",
+    "clear": "rimraf dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@vue/component-compiler-utils": "^2.6.0",
+    "parcel-bundler": "^1.12.3",
+    "rimraf": "^2.6.3",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bulma": "^0.7.4",
+    "vue": "^2.6.10",
+    "vue-hot-reload-api": "^2.3.3",
+    "vue-router": "^3.0.2",
+    "vuex": "^3.1.0"
+  },
+  "alias": {
+    "vue": "./node_modules/vue/dist/vue.esm.js"
+  }
+}
