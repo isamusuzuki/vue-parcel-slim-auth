@@ -45,6 +45,19 @@ export default {
                 });
             })
         },
+        signup (context, payload) {
+            return new Promise((resolve, reject) => {
+                axios.post(`${context.rootState.settings.serverUrl}/signup`,
+                    payload
+                ).then(response => {
+                    // 成功
+                    resolve(response);
+                }).catch(error => {
+                    // 失敗
+                    reject(error);
+                });
+            })
+        },
         loadToken (context) {
             if(localStorage.getItem(context.state.key)) {
                 const currentAuth = JSON.parse(localStorage.getItem(context.state.key));

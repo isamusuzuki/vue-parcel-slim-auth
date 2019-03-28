@@ -17,7 +17,8 @@
                 </div>
                 <div class="field">
                     <p class="control">
-                        <button v-on:click="login" class="button is-link">ログイン</button>
+                        <button v-on:click="login" class="button is-link">ログイン</button>&nbsp;
+                        <button v-on:click="goSignup" class="button is-text">新規登録</button>
                     </p>
                 </div>
             </div>
@@ -68,6 +69,10 @@ export default {
                     this.$store.dispatch('loader/off');
                 });
             }
+        },
+        goSignup() {
+            this.$store.dispatch('message/clear');
+            this.$router.push({path: '/signup'});
         }
     }
 }

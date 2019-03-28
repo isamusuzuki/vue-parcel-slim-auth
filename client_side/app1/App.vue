@@ -35,6 +35,7 @@ import settings from './modules/settings'
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import SecondPage from './pages/SecondPage';
+import SignupPage from './pages/SignupPage';
 
 Vue.use(Vuex);
 Vue.use(VueRouter);
@@ -52,6 +53,7 @@ const store = new Vuex.Store({
 const router = new VueRouter({
     routes: [
         {path: '/login', component: LoginPage},
+        {path: '/signup', component: SignupPage},
         {path: '/home', component: HomePage, meta: {requiresAuth: true}},
         {path: '/second', component: SecondPage, meta: {requiresAuth: true}}
     ]
