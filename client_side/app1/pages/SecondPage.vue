@@ -41,9 +41,3 @@ export default {
     }
 }
 </script>
-
-<style>
-.box.page-box {
-    min-height: 500px;
-}
-</style>

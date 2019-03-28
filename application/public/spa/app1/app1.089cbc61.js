@@ -106,4 +106,4 @@ module.exports=require("./lib/axios");
 },{"vue":"fAfE","vue-router":"7ov2","vuex":"aKwh","./components/LoadingModal":"xBcV","./components/MessageNotice":"c1bf","./components/NavMenu":"ws9B","./components/SideMenu":"TVSa","./modules/auth":"6e89","./modules/currentPage":"Opsb","./modules/loader":"qbad","./modules/message":"Oq/Z","./modules/settings":"aDvU","./pages/HomePage":"kUnv","./pages/LoginPage":"V+D+","./pages/SecondPage":"jTrJ","./pages/SignupPage":"Lou/","../node_modules/bulma/css/bulma.min.css":"ZcPv"}],"Focm":[function(require,module,exports) {
 "use strict";var e=t(require("vue")),p=t(require("./App"));function t(e){return e&&e.__esModule?e:{default:e}}new e.default({el:"#app",template:"<App/>",components:{App:p.default}});
 },{"vue":"fAfE","./App":"Js2s"}]},{},["Focm"], null)
-//# sourceMappingURL=/spa/app1/app1.522f5a40.js.map
+//# sourceMappingURL=/spa/app1/app1.089cbc61.js.map
