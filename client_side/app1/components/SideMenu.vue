@@ -2,22 +2,11 @@
     <aside class="menu is-hidden-mobile" v-if="isDisplay">
         <p class="menu-label">
             <span class="icon"><i class="fas fa-play-circle"></i></span>
-            新規作成
+            メニュー
         </p>
         <ul class="menu-list">
-            <li><a v-on:click="goInput" v-bind:class="{'is-active': currentPage == 'input'}">会議を始める</a></li>
-        </ul>
-        <p class="menu-label">
-            <span class="icon"><i class="fas fa-phone-square"></i></span>
-            ただいま会議中
-        </p>
-        <p class="menu-label">
-            <span class="icon"><i class="fas fa-cog"></i></span>    
-            設定
-        </p>
-        <ul class="menu-list">
-            <li><a v-on:click="goPhonebook" v-bind:class="{'is-active': currentPage == 'phonebook'}">電話帳</a></li>
-            <li><a v-on:click="goRestcomm" v-bind:class="{'is-active': currentPage == 'restcomm'}">Restcomm API</a></li>
+            <li><a v-on:click="goTop" v-bind:class="{'is-active': currentPage == 'home'}">ホーム</a></li>
+            <li><a v-on:click="goSecond" v-bind:class="{'is-active': currentPage === 'second'}">セカンド</a></li>
         </ul>
     </aside>
 </template>
@@ -33,14 +22,11 @@ export default {
         }
     },
     methods: {
-        goInput() {
-
+        goTop() {
+            this.$router.push({path: '/home'});
         },
-        goPhonebook() {
-
-        },
-        goRestcomm() {
-
+        goSecond() {
+            this.$router.push({path: '/second'});
         }
     }
 }

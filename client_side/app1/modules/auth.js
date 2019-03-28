@@ -32,6 +32,19 @@ export default {
                 });
             });
         },
+        getPayload (context) {
+            return new Promise((resolve, reject) => {
+                axios.get(`${context.rootState.settings.serverUrl}/api/user`,
+                    {headers: {Authorization: `Bearer ${context.rootState.auth.token}`}}
+                ).then(response => {
+                    // 成功
+                    resolve(response);
+                }).catch(error => {
+                    // 失敗
+                    reject(error);
+                });
+            })
+        },
         loadToken (context) {
             if(localStorage.getItem(context.state.key)) {
                 const currentAuth = JSON.parse(localStorage.getItem(context.state.key));

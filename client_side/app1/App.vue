@@ -34,7 +34,7 @@ import settings from './modules/settings'
 // ページ群をインポートする
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
-import PrefecturesPage from './pages/PrefecturesPage';
+import SecondPage from './pages/SecondPage';
 
 Vue.use(Vuex);
 Vue.use(VueRouter);
@@ -53,7 +53,7 @@ const router = new VueRouter({
     routes: [
         {path: '/login', component: LoginPage},
         {path: '/home', component: HomePage, meta: {requiresAuth: true}},
-        {path: '/prefectures', component: PrefecturesPage, meta: {requiresAuth: true}}
+        {path: '/second', component: SecondPage, meta: {requiresAuth: true}}
     ]
 });
 
