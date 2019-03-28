@@ -1,7 +1,0 @@
-application/vendor/
-application/logs/*
-!application/logs/README.md
-
-client_side/.cache
-client_side/dist
-client_side/node_modules/
