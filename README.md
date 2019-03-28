@@ -1,16 +1,18 @@
-# Vue-Parce-Slim-Authとは？
+# Vue-Parcel-Slim-Authとは？
 
-作成日 2019/03/27
+作成日 2019/03/27、更新日 2019/03/28
 
 このWebアプリは、クライアントサイドは、[Vue.js](https://jp.vuejs.org/v2/guide/)と[Parcel](https://parceljs.org/)を使ってSPA（シングルページアプリケーション）を実現し、サーバーサイドは[Slim Framework](https://www.slimframework.com/)を使ってログイン認証を実現させている。
 
 ![Webアプリのダイアグラム](misc/diagram.png)
 
+※ 本番環境（Linuxサーバー）へのインストール＆設定方法はスコープ外
+
 ## クライアントサイドの特長
 
 - CSSフレームワークは、[Bulma](https://bulma.io/)を採用している
 - JSフレームワークは、Vue.js + [axios](https://github.com/axios/axios) + [Vue-Router](https://router.vuejs.org/ja/) + [Vuex](https://vuex.vuejs.org/ja/)を採用している
-- Parcelを使ってJSファイル、CSSファイルをそれぞれ1つにバンドルしている
+- Parcelを使ってJSファイル、CSSファイルをそれぞれ1つにバンドルしている（まとめている）
 - アイコンライブラリである[Font Awesome](https://fontawesome.com/)は、CDNを使って組み込んでいる
 
 ## サーバーサイドの特長
@@ -72,8 +74,10 @@ npm run build
 
 ### SPAを開発する際の注意事項
 
-- Parcelの開発サーバーがホストするのはSPAだけで、API通信をローカルで実現するには、XamppのApacheサーバーを利用する必要がある
-- Porcelの開発サーバーは`http://localhost:1234/`であり、XamppのApacheサーバーは`http://localhost:80/`であるため、そのままではCORS（クロス・オリジン・リソース・シェアリング）エラーが発生してしまい、API通信が実現できない
+- Parcelの開発サーバーがホストするのはSPAだけである
+- API通信をローカルで実現するには、XamppのApacheサーバーを利用する必要がある
+- Porcelの開発サーバーは`http://localhost:1234/`であり、XamppのApacheサーバーは`http://localhost:80/`である
+- このままではCORS（クロス・オリジン・リソース・シェアリング）エラーが発生してしまい、API通信が実現できない
 
 Xampp (Apache)のConfigをいじって、`<Directory>`項目の中に、以下を追加する
 
@@ -87,7 +91,6 @@ Header set Access-Control-Allow-Credentials "true"
 ## その他
 
 - このWebアプリにログインできるID/PWの組み合わせは、 `user/user@123`
-- 本番環境（Linuxサーバー）へのインストール＆設定方法はここでは解説しない
 
 ## ファイルディレクトリ構成
 
@@ -97,16 +100,17 @@ Header set Access-Control-Allow-Credentials "true"
     |--application/   ... サーバーサイドのファイル群
     |   |
     |   |--public/    ... Apacheサーバーのドキュメントルート
+    |   |   |
     |   |   |--spa/   ... ビルドされたSPAの置き場
     |   |   |   `--app1/
     |   |   |       |--app1.xxxxxxxx.css ... バンドルされたCSSファイル
     |   |   |       |--app1.xxxxxxxx.js  ... バンドルされたJSファイル
     |   |   |       `--index.html        ... SPAの起動ファイル
+    |   |   |
     |   |   |--.htaccess ... Apache用の設定ファイル
     |   |   `--index.php ... Slim Frameworkの起動ファイル
     |   |
     |   `--src/                 ... Slim Frameworkのファイル群
-    |       |--controllers/     ... Controllers名前空間
     |       |--dependencies.php ... 依存性注入コンテナ
     |       |--middleware.php   ... ミドルウェア
     |       |--routes.php       ... ルーティング
@@ -121,9 +125,9 @@ Header set Access-Control-Allow-Credentials "true"
     |   |   |--App.vue      ... 親コンポーネント
     |   |   |--index.html   ... SPAの起動ファイル
     |   |   `--index.js     ... バンドルの基底となるJSファイル
-    |   `--package.json ... npm用の設定ファイル
+    |   `--package.json     ... npm用の設定ファイル
     |
     |--composer.json ... Composer用の設定ファイル
-    |--README.md ... このファイル
-    `--setup_db.sql ... DBテーブルを作成するクエリー
+    |--README.md     ... このファイル
+    `--setup_db.sql  ... DBテーブルを作成するクエリー
 ```
