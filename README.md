@@ -1,6 +1,6 @@
 # Vue-Parcel-Slim-Authとは？
 
-作成日 2019/03/27、更新日 2019/03/28
+作成日 2019/03/27、更新日 2019/04/02
 
 このWebアプリは、クライアントサイドは、[Vue.js](https://jp.vuejs.org/v2/guide/)と[Parcel](https://parceljs.org/)を使ってSPA（シングルページアプリケーション）を実現し、サーバーサイドは[Slim Framework](https://www.slimframework.com/)を使ってログイン認証を実現させている。
 
@@ -68,6 +68,9 @@ npm install
 npm run dev
 #=> ブラウザで`http://localhost:1234/`を開く
 
+# ビルドをする前に、前のファイルを削除しておく
+npm run clear
+
 # 本番用ファイルをビルドする
 npm run build
 ```
@@ -102,6 +105,7 @@ Header set Access-Control-Allow-Credentials "true"
     |   |--public/    ... Apacheサーバーのドキュメントルート
     |   |   |
     |   |   |--spa/   ... ビルドされたSPAの置き場
+    |   |   |   |
     |   |   |   `--app1/
     |   |   |       |--app1.xxxxxxxx.css ... バンドルされたCSSファイル
     |   |   |       |--app1.xxxxxxxx.js  ... バンドルされたJSファイル
@@ -125,6 +129,7 @@ Header set Access-Control-Allow-Credentials "true"
     |   |   |--App.vue      ... 親コンポーネント
     |   |   |--index.html   ... SPAの起動ファイル
     |   |   `--index.js     ... バンドルの基底となるJSファイル
+    |   |
     |   `--package.json     ... npm用の設定ファイル
     |
     |--composer.json ... Composer用の設定ファイル
