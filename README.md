@@ -114,13 +114,15 @@ Header set Access-Control-Allow-Credentials "true"
     |   |   |--.htaccess ... Apache用の設定ファイル
     |   |   `--index.php ... Slim Frameworkの起動ファイル
     |   |
-    |   `--src/                 ... Slim Frameworkのファイル群
-    |       |--dependencies.php ... 依存性注入コンテナ
-    |       |--middleware.php   ... ミドルウェア
-    |       |--routes.php       ... ルーティング
-    |       `--settings.php     ... 設定ファイル
+    |   |--src/       ... Slim Frameworkのファイル群
+    |   |   |--dependencies.php ... 依存性注入コンテナ
+    |   |   |--middleware.php   ... ミドルウェア
+    |   |   |--routes.php       ... ルーティング
+    |   |   `--settings.php     ... 設定ファイル
+    |   |
+    |   `--composer.json        ... Composer用の設定ファイル
     |
-    |--client_side/ ... クライアントサイドの開発環境
+    |--client_side/   ... クライアントサイドの開発環境
     |   |
     |   |--app1/
     |   |   |--components/  ... 子・孫コンポーネントのファイル群
@@ -132,7 +134,6 @@ Header set Access-Control-Allow-Credentials "true"
     |   |
     |   `--package.json     ... npm用の設定ファイル
     |
-    |--composer.json ... Composer用の設定ファイル
-    |--README.md     ... このファイル
-    `--setup_db.sql  ... DBテーブルを作成するクエリー
+    |--README.md      ... このファイル
+    `--setup_db.sql   ... DBテーブルを作成するクエリー
 ```
