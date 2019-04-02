@@ -4,10 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "parcel build app1/index.html --public-url /spa/app1 --out-dir ../application/public/spa/app1",
     "dev": "parcel app1/index.html",
     "clear": "rimraf dist ../application/public/spa/app1",
-    "clean": "rimraf dist ../application/public/spa/app1"
+    "build": "parcel build app1/index.html --public-url /spa/app1 --out-dir ../application/public/spa/app1"
   },
   "keywords": [],
   "author": "",
