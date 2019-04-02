@@ -30,16 +30,23 @@ import auth from './modules/auth';
 import currentPage from './modules/currentPage';
 import loader from './modules/loader';
 import message from './modules/message';
-import settings from './modules/settings'
 // ページ群をインポートする
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import SecondPage from './pages/SecondPage';
 import SignupPage from './pages/SignupPage';
 
-Vue.use(Vuex);
-Vue.use(VueRouter);
+// 設定値を決める
+const settings = {
+    namespaced: true,
+    state: {
+        startPage: '/home',
+        serverUrl: location.host === 'localhost:1234' ? 'http://localhost:80' : ''
+    }
+}
 
+// Vuexを設定する
+Vue.use(Vuex);
 const store = new Vuex.Store({
     modules: {
         auth,
@@ -50,6 +57,8 @@ const store = new Vuex.Store({
     }
 });
 
+// Vue-Routerを設定する
+Vue.use(VueRouter);
 const router = new VueRouter({
     routes: [
         {path: '/login', component: LoginPage},
@@ -58,7 +67,6 @@ const router = new VueRouter({
         {path: '/second', component: SecondPage, meta: {requiresAuth: true}}
     ]
 });
-
 router.beforeEach(function(to, from, next) {
     if (to.matched.some(record => record.meta.requiresAuth)) {
         if (!store.state.auth.hasToken) {
@@ -71,6 +79,7 @@ router.beforeEach(function(to, from, next) {
     }
 });
 
+// 親コンポーネントを設定する
 export default {
     router,
     store,
